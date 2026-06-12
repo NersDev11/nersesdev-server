@@ -1,5 +1,5 @@
 import axios from "axios";
-import { transporter } from "../utils/nodemailer";
+import { transporter } from "../utils/nodemailer.js";
 
 const myEmail = process.env.EMAIL;
 const token = process.env.TELEGRAM_TOKEN;
