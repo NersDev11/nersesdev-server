@@ -1,5 +1,5 @@
 import axios from "axios";
-import { transporter } from "../utils/nodemailer.js";
+// import { transporter } from "../utils/nodemailer.js";
 import { validateMessage } from "../utils/validateMessage.js";
 import { detectBots } from "../utils/detectBots.js";
 
@@ -18,13 +18,13 @@ export async function sendMessage(req, res) {
     return res.status(500).json({ error: "Invalid data" });
 
   try {
-    await transporter.sendMail({
-      from: myEmail,
-      to: myEmail,
-      subject,
-      text,
-      replyTo: sendersEmail,
-    });
+    // await transporter.sendMail({
+    //   from: myEmail,
+    //   to: myEmail,
+    //   subject,
+    //   text,
+    //   replyTo: sendersEmail,
+    // });
 
     await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
       chat_id: chatId,
