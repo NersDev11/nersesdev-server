@@ -8,9 +8,9 @@ const token = process.env.TELEGRAM_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
 
 export async function sendMessage(req, res) {
-  const { name, email: sendersEmail, subject, text, lastName } = req.body;
+  const { name, email: sendersEmail, subject, text, hpField } = req.body;
 
-  if (detectBots({ lastName }))
+  if (detectBots({ hpField }))
     return res.status(500).json({ error: "Bot detected" });
 
   console.log("1ok");
